@@ -1,0 +1,23 @@
+{
+  //
+  "preselection": {
+    // initial date
+    "from_year"  : 2015,
+    "from_month" : 1,
+    "from_day"   : 1,
+
+    // final date
+    "to_year"    : 2015,
+    "to_month"   : 10,
+    "to_day"     : 7,
+
+    // data files
+    "archives_url": "http://data.githubarchive.org",
+    "archives_dir": "archives"
+  },
+
+  // 
+  "cache_dir": ".cache",
+  // "log_file": null
+  "log_file": "preselection.log"
+}
