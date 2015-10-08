@@ -22,14 +22,14 @@ config = dict(
     from_month     = 1,
     from_day       = 1,
     from_hour      = 0,
-    # to_year      = datetime.datetime.now().year,
-    # to_month     = datetime.datetime.now().month,
-    # to_day       = datetime.datetime.now().day,
-    # to_hour      = datetime.datetime.now().hour,
-    to_year        = 2015,
-    to_month       = 1,
-    to_day         = 1,
-    to_hour        = 10,
+    to_year        = datetime.datetime.now().year,
+    to_month       = datetime.datetime.now().month,
+    to_day         = datetime.datetime.now().day,
+    to_hour        = datetime.datetime.now().hour,
+    # to_year        = 2015,
+    # to_month       = 1,
+    # to_day         = 1,
+    # to_hour        = 10,
 
 )
 # =============================================================================
