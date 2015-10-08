@@ -184,7 +184,7 @@ class Preselection(object):
         while i < size:
             items = repos[i: i+step]
 
-            with codecs.open(dir_+'/repositories%04d'%j, 'w', 'utf-8') as f:
+            with codecs.open(dir_+'/repositories.%04d'%j, 'w', 'utf-8') as f:
                 f.write('stars,forks,commits,name\n')
                 for item in items:
                     f.write('%05d,%05d,%07d,"%s"\n'%(item[1], 
