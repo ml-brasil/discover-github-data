@@ -1,7 +1,6 @@
 import logging
 from octograb import utils
 from octograb import models
-from octograb import preselection
 
 __all__ = ['config', 'configure']
 
@@ -19,5 +18,6 @@ def configure(config_name):
         level    = logging.DEBUG
     )
 
+    utils.make_dir(config['input_dir'])
     utils.make_dir(config['cache_dir'])
     utils.make_dir(config['cache_dir']+'/'+config['preselection']['archives_dir'])

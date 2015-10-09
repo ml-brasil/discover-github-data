@@ -11,6 +11,11 @@
     "to_month"     : 10,
     "to_day"       : 7,
     
+    // for data selection
+    "min_stars"    : 2,
+    "min_forks"    : 0,
+    "min_commits"  : 0,
+
     // data files
     "archives_url" : "http://data.githubarchive.org",
     "archives_dir" : "archives",

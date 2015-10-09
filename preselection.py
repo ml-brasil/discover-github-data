@@ -1,4 +1,5 @@
 import octograb
+import octograb.preselection
 
 octograb.configure('config.json')
 
