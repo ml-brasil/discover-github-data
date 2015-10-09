@@ -18,7 +18,10 @@
   },
 
   // 
-  "cache_dir" : ".cache",
+  "input_per_file": 2400,
+  "input_dir"  : "_input",
+  "output_dir" : "_output",
+  "cache_dir"  : ".cache",
+  "log_file"   : "preselection.log"
   // "log_file"  : null
-  "log_file"  : "preselection.log"
 }
