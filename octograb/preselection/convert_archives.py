@@ -1,8 +1,13 @@
+import socket
+import time
 import os
 import gzip
 import json
 import datetime
 import cPickle
+
+import requests
+
 import octograb
 
 __all__ = ['convert_archives']
@@ -90,7 +95,19 @@ def _process_day(date):
     # download them all
     for url, path, name in zip(archive_urls, archive_paths, archive_names):
         logger.info('Downloading "%s"...'%name)
-        octograb.utils.download_file(url, path)
+        
+        # repeat until download is completed
+        _download_complete = False
+        while not _download_complete:
+            try:
+                octograb.utils.download_file(url, path)
+                _download_complete = True
+
+            # handle connection error
+            except (socket.error, requests.exceptions.ConnectionError) as e:
+                logger.error('Connection error, trying again after 15 seconds.')
+                time.sleep(15)
+
         logger.info('... download completed.')
 
     # open them all
