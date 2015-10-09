@@ -119,7 +119,13 @@ def _process_file(path, dataset):
     f.close()
 
 def _process_event(line, dataset):
-    data  = json.loads(line)
+    # don't stop processing
+    try:
+        data  = json.loads(line)
+    except ValueError as e:
+        logger.error(e.message)
+        return
+
     type_ = data['type']
     name  = data['repo']['name']
 

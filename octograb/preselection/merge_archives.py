@@ -31,8 +31,11 @@ def merge_archives():
     
     logger.info('Saving final dataset "archives.csv"...')
     name = _c['cache_dir']+'/archives.csv'
+    logger.debug('Ordering repositories.')
     data = dataset.export()
+    logger.debug('Converting data to csv.')
     s = octograb.utils.archive_to_csv(data)
+    logger.debug('Saving.')
     octograb.utils.safe_save(s, name, no_bkp=True)
     logger.info('... dataset saved.')
 
