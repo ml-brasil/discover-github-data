@@ -125,7 +125,12 @@ def _process_day(date):
 
     # remove downloaded files
     for path in archive_paths:
-        os.remove(path)
+        try:
+            os.remove(path)
+
+        # ignore if cant remove file
+        except WindowsError as e:
+            logger.error('Could not remove "%s": "%s"'%(path, e.message))
 
     logger.info('... archive %s converted.'%_name)
 
